@@ -1,0 +1,11 @@
+.backgroundContainer {
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.wrapper {
+  max-width: 1200px;
+  margin: 0 auto;
+  /* margin-top: 40px; */
+  padding: 0px 10px 0px 10px;
+}

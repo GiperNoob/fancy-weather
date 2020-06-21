@@ -1,0 +1,43 @@
+.days {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 50px;
+  margin-bottom: 23px;
+}
+.first, .second {
+  margin-right: 52px;
+}
+.day {
+  font-family: 'Lato', sans-serif;
+  font-weight: 900;
+  font-size: 30px;
+  line-height: 30px;
+  text-transform: uppercase;
+  color: #FFFFFF;
+}
+
+.days__img-degrees {
+  display: flex;
+  position: relative;
+}
+
+.days__img-degrees span {
+  font-family: 'Lato', sans-serif;
+  font-weight: 700;
+  font-size: 80px;
+  line-height: 98px;
+  text-transform: uppercase;
+  color: #FFFFFF;
+}
+
+.weather-img {
+  width: 90px;
+  margin-left: 15px;
+}
+
+.little-ring {
+  position: absolute;
+  width: 30px;
+  left: 90px;
+  top: 8px;
+}

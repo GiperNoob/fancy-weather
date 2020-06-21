@@ -1,0 +1,25 @@
+.main {
+  margin-top: 57px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.weather__inform-container {
+  display: flex;
+}
+
+.weather__degrees span {
+  font-family: 'Lato', sans-serif;
+  font-weight: 900;
+  font-size: 306px;
+  line-height: 373px;
+  text-transform: uppercase;
+  color: #FFFFFF;
+}
+
+.big-ring {
+  position: absolute;
+  width: 90px;
+}

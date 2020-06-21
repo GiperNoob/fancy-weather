@@ -1,0 +1,31 @@
+.btn-container {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.search-bar__btns-left {
+  display: flex;
+}
+
+.btn {
+  width: 44px;
+  height: 44px;
+  background: rgba(174, 181, 185, 0.5);
+  border-radius: 5px;
+  font-family: 'Lato', sans-serif;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 17px;
+  text-transform: uppercase;
+  color: #FFFFFF;
+}
+
+.btn:hover {
+  box-shadow: 1px 4px 10px 1px;
+}
+
+.btn_refresh {
+  margin-right: 10px;
+}

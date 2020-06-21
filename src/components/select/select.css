@@ -1,0 +1,14 @@
+#language {
+  width: 71px;
+  height: 44px;
+  background: rgba(174, 181, 185, 0.5);
+  border-radius: 5px;
+  font-size: 14px;
+  line-height: 17px;
+  color: #FFFFFF;
+  font-family: 'Lato', sans-serif;
+  font-weight: 400;
+  margin-right: 10px;
+  padding-left: 15px;
+  cursor: pointer;
+}
