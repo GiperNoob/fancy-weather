@@ -26,11 +26,12 @@ export default class Title extends Component {
     })
   }
   render() {
+    const { city, country } = this.props
     return (
       <div className="title">
 
         <div>
-          <h1 className="city">Minsk, Belarus</h1>
+          <h1 className="city">{city}, {country}</h1>
         </div>
 
         <div>

@@ -6,14 +6,15 @@ import secondImg from './cloudy-day-2.svg';
 import thirdImg from './cloudy-day-3.svg';
 import ring from './ring.png';
 
-const Days = () => {
+const Days = (props) => {
+  const { firstDay, secondDay, thirdDay } = props
   return (
     <div className="days">
 
       <div className="first">
         <span className="day">Monday</span>
         <div className="days__img-degrees">
-          <span>15</span>
+          <span>{firstDay}</span>
           <img src={ring} alt="ring" className="little-ring" />
           <img src={firstImg} alt="weather-img" className="weather-img" />
         </div>
@@ -22,7 +23,7 @@ const Days = () => {
       <div className="second">
         <span className="day">Tuesday</span>
         <div className="days__img-degrees">
-          <span>14</span>
+          <span>{secondDay}</span>
           <img src={ring} alt="ring" className="little-ring" />
           <img src={secondImg} alt="weather-img" className="weather-img" />
         </div>
@@ -31,7 +32,7 @@ const Days = () => {
       <div className="third">
         <span className="day">Wednesday</span>
         <div className="days__img-degrees">
-          <span>10</span>
+          <span>{thirdDay}</span>
           <img src={ring} alt="ring" className="little-ring" />
           <img src={thirdImg} alt="weather-img" className="weather-img" />
         </div>

@@ -1,4 +1,5 @@
 .info__text {
+  position: relative;
   display: flex;
   flex-direction: column;
   margin-left: 35px;
@@ -17,4 +18,9 @@
   position: absolute;
   width: 220px;
   top: 160px;
+}
+
+.little-ring-overcast {
+  position: absolute;
+  width: 15px;
 }

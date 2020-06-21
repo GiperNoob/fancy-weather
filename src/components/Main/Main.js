@@ -8,36 +8,47 @@ import SimpleMap from '../SimpleMap';
 import ring from './ring.png';
 
 export default class Main extends Component {
-  constructor(props) {
-    super(props)
-    this.state = {
-
-    }
-  }
-
   render() {
+    const {
+      city, country, latitude, longitude,
+      feelsLike, humidity, temp, wind,
+      firstDay, secondDay, thirdDay
+    } = this.props;
+
     return (
       <main className="main">
         <div className="weather">
 
-          <Title />
+          <Title city={city}
+            country={country} />
 
           <div className="weather__inform-container">
             <div className="weather__degrees">
-              <span>10</span>
+
+              <span>{temp}</span>
+
               <img src={ring} alt="ring" className="big-ring" />
 
             </div>
 
-            <Overcast />
+            <Overcast
+              feelsLike={feelsLike}
+              humidity={humidity}
+              wind={wind}
+            />
 
           </div>
 
-          <Days />
+          <Days
+            firstDay={firstDay}
+            secondDay={secondDay}
+            thirdDay={thirdDay}
+          />
 
         </div>
 
-        <SimpleMap />
+        <SimpleMap latitude={latitude}
+          longitude={longitude} />
 
       </main>
     )

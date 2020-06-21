@@ -9,6 +9,10 @@
   display: flex;
 }
 
+.search-bar {
+  padding-top: 40px;
+}
+
 .btn {
   width: 44px;
   height: 44px;

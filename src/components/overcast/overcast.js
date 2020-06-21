@@ -1,8 +1,11 @@
 import React from 'react';
 import './overcast.css';
-import Image from './cloudy.svg';
 
-const Overcast = () => {
+import Image from './cloudy.svg';
+import ring from './ring.png';
+
+const Overcast = (props) => {
+  const { feelsLike, humidity, wind } = props
   return (
     <div className="overcast">
 
@@ -13,9 +16,9 @@ const Overcast = () => {
       <div className="info__text">
 
         <span>overcast</span>
-        <span>feels like: 7</span>
-        <span>wind: 2 m/s</span>
-        <span>humidity: 83%</span>
+        <span>feels like: {feelsLike}<img src={ring} alt="ring" className="little-ring-overcast" /></span>
+        <span>wind: {wind} m/s</span>
+        <span>humidity: {humidity}%</span>
 
       </div>
 

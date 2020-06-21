@@ -1,6 +1,7 @@
 .backgroundContainer {
   background-repeat: no-repeat;
   background-size: cover;
+  padding-bottom: 142px;
 }
 
 .wrapper {
