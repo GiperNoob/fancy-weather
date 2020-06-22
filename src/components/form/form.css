@@ -5,11 +5,11 @@
 }
 
 .search-field {
-  font-family: 'Lato', sans-serif;
+  font-family: "Lato", sans-serif;
   font-weight: 400;
   font-size: 16px;
   line-height: 17px;
-  color: #FFFFFF;
+  color: #ffffff;
   width: 274px;
   height: 44px;
   background: rgba(76, 82, 85, 0.4);
@@ -21,9 +21,8 @@
 
 .search-field::placeholder {
   align-items: center;
-  color: #FFFFFF;
+  color: #ffffff;
 }
-
 
 .btn-submit {
   width: 101px;
@@ -31,4 +30,19 @@
   background: rgba(174, 181, 185, 0.5);
   border-radius: 0px 5px 5px 0px;
   text-align: center;
+}
+
+@media (max-width: 320px) {
+  .form {
+    margin: 0 auto;
+    margin-top: 20px;
+  }
+
+  .search-field {
+    width: 151px;
+  }
+
+  .btn-submit {
+    width: 70px;
+  }
 }

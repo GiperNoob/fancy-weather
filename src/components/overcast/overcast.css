@@ -7,12 +7,12 @@
 }
 
 .info__text span {
-  font-family: 'Lato', sans-serif;
+  font-family: "Lato", sans-serif;
   font-weight: 900;
   font-size: 22px;
   line-height: 37px;
   text-transform: uppercase;
-  color: #FFFFFF;
+  color: #ffffff;
 }
 .lio {
   position: absolute;
@@ -23,4 +23,17 @@
 .little-ring-overcast {
   position: absolute;
   width: 15px;
+}
+
+@media (max-width: 320px) {
+  .info__text {
+    margin-left: 0px;
+    margin-top: 0px;
+  }
+
+  .lio {
+    width: 150px;
+    top: 245px;
+    left: 0;
+  }
 }

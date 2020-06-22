@@ -6,35 +6,39 @@ export default class Form extends Component {
     super(props);
     this.state = {
       label: '',
-    }
+    };
   }
   onChange = (event) => {
     this.setState({
-      label: event.target.value
-    })
-  }
+      label: event.target.value,
+    });
+  };
 
   onSubmit = (event) => {
     event.preventDefault();
     this.props.anotherCity(this.state.label);
     this.setState({
       label: '',
-    })
-  }
+    });
+  };
   render() {
     return (
       <form className="form" onSubmit={this.onSubmit}>
-
-        <div><input
-          type="text"
-          className="search-field"
-          placeholder="Search city"
-          value={this.state.label}
-          onChange={this.onChange}
-        /></div>
-        <div><button type="submit" className="btn btn-submit">search</button></div>
-
+        <div>
+          <input
+            type="text"
+            className="search-field"
+            placeholder="Search city"
+            value={this.state.label}
+            onChange={this.onChange}
+          />
+        </div>
+        <div>
+          <button type="submit" className="btn btn-submit">
+            search
+          </button>
+        </div>
       </form>
-    )
+    );
   }
 }

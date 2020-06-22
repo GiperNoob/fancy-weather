@@ -10,7 +10,7 @@ export default class App extends Component {
     super(props);
     this.state = {
       src: '',
-      weatherInfo: {}
+      weatherInfo: {},
     };
     this.Services = new Services();
 
@@ -20,13 +20,12 @@ export default class App extends Component {
   }
 
   getImages = () => {
-    this.Services.getLinkToImage()
-      .then((url) => {
-        this.setState({
-          src: url,
-        })
-      })
-  }
+    this.Services.getLinkToImage().then((url) => {
+      this.setState({
+        src: url,
+      });
+    });
+  };
 
   getGeoInfo = () => {
     this.Services.getIP()
@@ -35,39 +34,35 @@ export default class App extends Component {
       })
       .then((weatherInfo) => {
         this.setState({
-          weatherInfo
-        })
-      })
-  }
+          weatherInfo,
+        });
+      });
+  };
 
   anotherCity = (city) => {
     this.Services.getWeather(city)
       .then((weatherInfo) => {
         return this.setState({
-          weatherInfo
-        })
+          weatherInfo,
+        });
       })
       .then(() => {
-        this.getImages()
-      })
-  }
-
+        this.getImages();
+      });
+  };
 
   render() {
     return (
-      <div className="backgroundContainer"
-        style={{ backgroundImage: `url(${this.state.src})` }}>
-
+      <div
+        className="backgroundContainer"
+        style={{ backgroundImage: `url(${this.state.src})` }}
+      >
         <div className="wrapper">
-
-          <SearchBar refresh={this.getImages}
-            anotherCity={this.anotherCity} />
+          <SearchBar refresh={this.getImages} anotherCity={this.anotherCity} />
 
           <Main weatherInfo={this.state.weatherInfo} />
-
         </div>
-
       </div>
-    )
+    );
   }
 }

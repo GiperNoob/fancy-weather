@@ -18,12 +18,12 @@
   height: 44px;
   background: rgba(174, 181, 185, 0.5);
   border-radius: 5px;
-  font-family: 'Lato', sans-serif;
+  font-family: "Lato", sans-serif;
   font-weight: 700;
   font-size: 14px;
   line-height: 17px;
   text-transform: uppercase;
-  color: #FFFFFF;
+  color: #ffffff;
 }
 
 .btn:hover {
@@ -32,4 +32,14 @@
 
 .btn_refresh {
   margin-right: 10px;
+}
+
+@media (max-width: 320px) {
+  .search-bar {
+    padding-top: 0px;
+  }
+
+  .search-bar__btns-left {
+    margin: 0 auto;
+  }
 }

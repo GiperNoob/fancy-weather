@@ -1,16 +1,15 @@
-import React from 'react';
-import './days.css';
+import React from "react";
+import "./days.css";
 
-import firstImg from './cloudy-day-1.svg';
-import secondImg from './cloudy-day-2.svg';
-import thirdImg from './cloudy-day-3.svg';
-import ring from './ring.png';
+import firstImg from "../../assets/cloudy-day-1.svg";
+import secondImg from "../../assets/cloudy-day-2.svg";
+import thirdImg from "../../assets/cloudy-day-3.svg";
+import ring from "../../assets/ring.png";
 
 const Days = (props) => {
-  const { firstDay, secondDay, thirdDay } = props
+  const { firstDay, secondDay, thirdDay } = props;
   return (
     <div className="days">
-
       <div className="first">
         <span className="day">Monday</span>
         <div className="days__img-degrees">
@@ -38,7 +37,7 @@ const Days = (props) => {
         </div>
       </div>
     </div>
-  )
+  );
 };
 
 export default Days;

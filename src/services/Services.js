@@ -1,6 +1,7 @@
 export default class Services {
   async getLinkToImage() {
-    const url = 'https://api.unsplash.com/photos/random?query=morning&client_id=your api key';
+    const url =
+      'https://api.unsplash.com/photos/random?query=morning&client_id=your id';
 
     const res = await fetch(url);
 
@@ -10,7 +11,6 @@ export default class Services {
   }
 
   async getIP() {
-
     const url = 'https://ipinfo.io/json?token=your token';
 
     const res = await fetch(url);
@@ -34,7 +34,7 @@ export default class Services {
   transformInfo(ip) {
     return {
       city: ip.city,
-    }
+    };
   }
 
   transformWeather(body) {
@@ -50,6 +50,6 @@ export default class Services {
       firstDay: body.list[6].main.temp.toFixed(),
       secondDay: body.list[14].main.temp.toFixed(),
       thirdDay: body.list[22].main.temp.toFixed(),
-    }
+    };
   }
 }

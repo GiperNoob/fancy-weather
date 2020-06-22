@@ -11,15 +11,32 @@
 }
 
 .weather__degrees span {
-  font-family: 'Lato', sans-serif;
+  font-family: "Lato", sans-serif;
   font-weight: 900;
   font-size: 306px;
   line-height: 373px;
   text-transform: uppercase;
-  color: #FFFFFF;
+  color: #ffffff;
 }
 
 .big-ring {
   position: absolute;
   width: 90px;
+}
+
+@media (max-width: 320px) {
+  .weather__degrees span {
+    font-weight: 700;
+    font-size: 130px;
+    line-height: 170px;
+  }
+
+  .weather__inform-container {
+    display: block;
+    text-align: center;
+  }
+
+  .big-ring {
+    width: 50px;
+  }
 }
