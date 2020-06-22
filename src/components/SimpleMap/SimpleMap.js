@@ -23,7 +23,7 @@ const SimpleMap = (props) => {
 
         defaultZoom={zoom}
 
-        center={{ lat: Number(latitude), lng: Number(longitude) }}
+        center={{ lat: latitude, lng: longitude }}
       >
       </GoogleMapReact>
 

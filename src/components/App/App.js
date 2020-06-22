@@ -10,28 +10,16 @@ export default class App extends Component {
     super(props);
     this.state = {
       src: '',
-      city: '',
-      country: '',
-      latitude: '',
-      longitude: '',
-      feelsLike: '',
-      humidity: '',
-      temp: '',
-      wind: '',
-      firstDay: '',
-      secondDay: '',
-      thirdDay: '',
+      weatherInfo: {}
     };
     this.Services = new Services();
 
-    this.getImages = this.getImages.bind(this);
     this.getImages();
 
-    this.getGeoInfo = this.getGeoInfo.bind(this);
     this.getGeoInfo();
   }
 
-  getImages() {
+  getImages = () => {
     this.Services.getLinkToImage()
       .then((url) => {
         this.setState({
@@ -40,62 +28,42 @@ export default class App extends Component {
       })
   }
 
-  getGeoInfo() {
+  getGeoInfo = () => {
     this.Services.getIP()
-      .then((body) => {
-
+      .then((city) => {
+        return this.Services.getWeather(city.city);
+      })
+      .then((weatherInfo) => {
         this.setState({
-          city: body.city,
+          weatherInfo
+        })
+      })
+  }
 
+  anotherCity = (city) => {
+    this.Services.getWeather(city)
+      .then((weatherInfo) => {
+        return this.setState({
+          weatherInfo
         })
       })
       .then(() => {
-        return this.Services.getWeather(this.state.city);
-      })
-      .then((body) => {
-        this.setState({
-          city: body.city,
-          country: body.country,
-          latitude: body.latitude,
-          longitude: body.longitude,
-          feelsLike: body.feelsLike,
-          humidity: body.humidity,
-          temp: body.temp,
-          wind: body.wind,
-          firstDay: body.firstDay,
-          secondDay: body.secondDay,
-          thirdDay: body.thirdDay,
-        })
+        this.getImages()
       })
   }
 
 
   render() {
-    const { city, country, latitude,
-      longitude, feelsLike, humidity,
-      temp, wind,
-      firstDay, secondDay, thirdDay } = this.state;
-
     return (
       <div className="backgroundContainer"
         style={{ backgroundImage: `url(${this.state.src})` }}>
 
         <div className="wrapper">
 
-          <SearchBar refresh={this.getImages} />
+          <SearchBar refresh={this.getImages}
+            anotherCity={this.anotherCity} />
 
-          <Main city={city}
-            country={country}
-            latitude={latitude}
-            longitude={longitude}
-            feelsLike={feelsLike}
-            humidity={humidity}
-            temp={temp}
-            wind={wind}
-            firstDay={firstDay}
-            secondDay={secondDay}
-            thirdDay={thirdDay}
-          />
+          <Main weatherInfo={this.state.weatherInfo} />
 
         </div>
 

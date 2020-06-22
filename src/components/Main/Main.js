@@ -13,7 +13,7 @@ export default class Main extends Component {
       city, country, latitude, longitude,
       feelsLike, humidity, temp, wind,
       firstDay, secondDay, thirdDay
-    } = this.props;
+    } = this.props.weatherInfo;
 
     return (
       <main className="main">

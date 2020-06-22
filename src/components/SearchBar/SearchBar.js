@@ -23,7 +23,7 @@ const SearchBar = (props) => {
 
         </div>
 
-        <Form />
+        <Form anotherCity={props.anotherCity} />
       </div>
     </div>
   )

@@ -1,6 +1,6 @@
 export default class Services {
   async getLinkToImage() {
-    const url = 'https://api.unsplash.com/photos/random?query=morning&client_id=Your ID';
+    const url = 'https://api.unsplash.com/photos/random?query=morning&client_id=your api key';
 
     const res = await fetch(url);
 
@@ -21,7 +21,7 @@ export default class Services {
   }
 
   async getWeather(city) {
-    const url = `https://api.openweathermap.org/data/2.5/forecast?q=${city}&lang=ua&units=metric&APPID=Yuor ID`;
+    const url = `https://api.openweathermap.org/data/2.5/forecast?q=${city}&lang=ua&units=metric&APPID=your id`;
 
     const res = await fetch(url);
 

@@ -1,15 +1,40 @@
-import React from 'react';
+import React, { Component } from 'react';
 import './form.css';
 
-const Form = () => {
-  return (
-    <form className="form">
+export default class Form extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      label: '',
+    }
+  }
+  onChange = (event) => {
+    this.setState({
+      label: event.target.value
+    })
+  }
 
-      <div><input type="text" className="search-field" placeholder="Search city" /></div>
-      <div><button type="submit" className="btn btn-submit">search</button></div>
+  onSubmit = (event) => {
+    event.preventDefault();
+    this.props.anotherCity(this.state.label);
+    this.setState({
+      label: '',
+    })
+  }
+  render() {
+    return (
+      <form className="form" onSubmit={this.onSubmit}>
 
-    </form>
-  )
-};
+        <div><input
+          type="text"
+          className="search-field"
+          placeholder="Search city"
+          value={this.state.label}
+          onChange={this.onChange}
+        /></div>
+        <div><button type="submit" className="btn btn-submit">search</button></div>
 
-export default Form;
+      </form>
+    )
+  }
+}
